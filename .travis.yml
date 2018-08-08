@@ -1,0 +1,37 @@
+language: node_js
+
+node_js:
+  - "8"
+
+branches:
+  only:
+    - master
+
+git:
+  depth: 3
+  quiet: true
+  submodules: false
+
+before_install:
+  - echo 'do some before_install'
+
+install:
+  - echo 'do some install'
+
+before_script:
+  - echo 'do some before_script'
+
+script:
+  - echo 'do some script'
+
+before_deploy:
+  - echo 'do some before_deploy'
+
+after_deploy:
+  - echo 'do some after_deploy'
+
+after_success:
+  - ssh root@47.106.128.182 "./deploy"
+
+addons:
+  ssh_known_hosts: 47.106.128.182
