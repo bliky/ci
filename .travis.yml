@@ -10,8 +10,6 @@ git:
   submodules: false
 install:
 - echo 'do some install'
-# before_script:
-# - echo 'do some before_script'
 script:
 - echo 'do some script'
 before_deploy:
@@ -22,6 +20,6 @@ after_success:
 - ssh root@47.106.128.182 "./deploy.sh"
 addons:
   ssh_known_hosts: 47.106.128.182
-before_script:
+before_install:
 - openssl aes-256-cbc -K $encrypted_544cceae6566_key -iv $encrypted_544cceae6566_iv
   -in lianaishengdian.pem.enc -out lianaishengdian.pem -d
