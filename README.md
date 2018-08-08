@@ -1,6 +1,13 @@
 # 持续集成部署研究
 
 ## Travis-ci
+
+```
+sudo gem install travis
+travis login
+travis encrypt-file ~/.ssh/id_rsa --add
+```
+
 ```
 sudo: false
 
