@@ -23,3 +23,6 @@ addons:
 before_install:
 - openssl aes-256-cbc -K $encrypted_544cceae6566_key -iv $encrypted_544cceae6566_iv
   -in lianaishengdian.pem.enc -out lianaishengdian.pem -d
+- eval "$(ssh-agent -s)"
+- chmod 600 lianaishengdian.pem
+- ssh-add lianaishengdian.pem
