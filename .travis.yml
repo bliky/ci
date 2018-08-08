@@ -1,39 +1,32 @@
 language: node_js
-
 node_js:
 - '8'
-
 branches:
   only:
   - master
-
 git:
   depth: 3
   quiet: true
   submodules: false
-
 before_install:
-  - openssl aes-256-cbc -K $encrypted_544cceae6566_key -iv $encrypted_544cceae6566_iv -in lianaishengdian.pem.enc -out ./lianaishengdian.pem -d
-  - chmod 600 ./lianaishengdian.pem
-  - echo 'do some before_install'
-
+- openssl aes-256-cbc -K $encrypted_544cceae6566_key -iv $encrypted_544cceae6566_iv
+  -in lianaishengdian.pem.enc -out ./lianaishengdian.pem -d
+- chmod 600 ./lianaishengdian.pem
+- echo 'do some before_install'
 install:
-  - echo 'do some install'
-
+- echo 'do some install'
 before_script:
-  - echo 'do some before_script'
-
+- echo 'do some before_script'
 script:
-  - echo 'do some script'
-
+- echo 'do some script'
 before_deploy:
-  - echo 'do some before_deploy'
-
+- echo 'do some before_deploy'
 after_deploy:
-  - echo 'do some after_deploy'
-
+- echo 'do some after_deploy'
 after_success:
-  - ssh -i ./lianaishengdian.pem root@47.106.128.182 "./deploy.sh"
-
+- ssh -i ./lianaishengdian.pem root@47.106.128.182 "./deploy.sh"
 addons:
   ssh_known_hosts: 47.106.128.182
+env:
+  global:
+    secure: q3ND1v6rfSF8VYDydi8ECyyO3oQRHDRXABCtp66wGG80XaL5Hrp+VJoOV2harFjwGiwTdaM8DmYc0cmu9MFckIVAc+4Zh/82ZlKXE4fCfioGwLuYY6BvP+EGJBmdDAPsQnDpoQGaiCCDfDwEnl5OdebJEinWZMgZzv4T7LG5SbZE6aJn7Me/Z7UENNXuhfVNJrg5cTl0MjATDFQJtnSw9xIH4UGEGv4i9PqBae7ssoXCQvJsnuvSObljLHNDbT0042voyLMRoOL3LoRgZRzlz063+RUttrty2AT4P+qITaRmLgPxJQjh9vuU5AjOqBw19OxVfJzgYIlDtVAmZ5koEiYNFUEMfIBt8RpO9Ye2ylQMzLbJWvm2+mhKn9Co1EgGSBLDMIjUN41XJmx0mFDWRQxz577Ao2ZOoh507gljrAL7PHLb5aBjwKMHfmvGUoSxaHZErvUeveqeFg1L6sOzZriZ1z52WTjqc70l/xA5Qiq3dFC+ylAr1KPt+uE15HmTdNK5pUYMZtywqzlTPAr9mEbMbsDZJHni8twVf9B1np10ZWJJDiRprlXcsuu5f2veA4/HpYtKLo/5Xe6E49Se0LLAIEwnTU1/OOrw1AfQnuOV0kWhVSPJpga4PC3NnYj8M4+zqZ7R87raoEJKNycvFIEZZ7gxF55uixsbmT5F7DM=
