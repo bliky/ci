@@ -1,4 +1,4 @@
-# 持续集成部署研究
+# 持续集成部署研究 [![Build Status](https://travis-ci.com/bliky/ci.svg?branch=master)](https://travis-ci.com/bliky/ci)
 
 ## Travis-ci
 
